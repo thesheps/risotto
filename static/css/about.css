@@ -4,6 +4,10 @@
     border-radius: 50%;
 }
 
+.about__description {
+    font-size: 1px !important;
+}
+
 .about__title {
     display: inline;
     vertical-align: top;
