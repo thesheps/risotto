@@ -1,6 +1,7 @@
 /* About/bio section */
 .about__logo {
-    height: 1.5rem;
+    height: 10rem;
+    border-radius: 50%;
 }
 
 .about__title {
