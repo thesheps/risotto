@@ -3,7 +3,7 @@
     <div class="aside__about">
         {{ with .logo }}<img class="about__logo u-photo" src="{{ . | absURL }}" alt="Logo">{{ end }}
         <br>
-        <h1 class="about__title p-author">{{ .name }}</h1>
+        <h1 class="about__title p-author" rel="author">{{ .name }}</h1>
         {{ with .summary }}<p class="about__summary p-note">{{ . | markdownify }}</p>{{ end }}
     </div>
     {{ end }}
