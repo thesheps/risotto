@@ -1,17 +1,21 @@
 {{ with .Site.Params.about }}
-<div class="aside__about">
-    {{ with .logo }}<img class="about__logo" src="{{ . | absURL }}" alt="Logo">{{ end }}
-    <br>
-<h1 class="about__title">{{ .title }}</h1>
-{{ with .summary }}<p class="about__summary">{{ . | markdownify }}</p>{{ end }}
-{{ with .description }}<p class="about__title">{{ . | markdownify }}</p>{{ end }}
-</div>
-{{ end }}
-
-<ul class="aside__social-links">
-    {{ range $item := .Site.Params.socialLinks }}
-    <li>
-        <a href="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}" title="{{ $item.title }}"><i class="{{ $item.icon }}" aria-hidden="true"></i></a>&nbsp;
-    </li>
+<div class="h-card">
+    <div class="aside__about">
+        {{ with .logo }}<img class="about__logo u-photo" src="{{ . | absURL }}" alt="Logo">{{ end }}
+        <br>
+        <h1 class="about__title p-name">{{ .name }}</h1>
+        {{ with .summary }}<p class="about__summary p-note">{{ . | markdownify }}</p>{{ end }}
+    </div>
     {{ end }}
-</ul>
+
+    <ul class="aside__social-links">
+        {{ range $item := .Site.Params.socialLinks }}
+        <li>
+            <a href="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}" title="{{ $item.title }}"><i
+                    class="{{ $item.icon }}" aria-hidden="true"></i></a>&nbsp;
+        </li>
+        {{ end }}
+    </ul>
+
+    <div class="aside__about u-url">https://www.thesheps.dev</div>
+</div>
