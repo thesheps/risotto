@@ -3,7 +3,7 @@
     <div class="aside__about">
         {{ with .logo }}<img class="about__logo u-photo" src="{{ . | absURL }}" alt="Logo">{{ end }}
         <br>
-        <h1 class="about__title p-name rel-author">{{ .name }}</h1>
+        <h1 class="about__title rel-author">{{ .name }}</h1>
         {{ with .summary }}<p class="about__summary p-note">{{ . | markdownify }}</p>{{ end }}
     </div>
     {{ end }}
@@ -17,5 +17,5 @@
         {{ end }}
     </ul>
 
-    <div class="aside__about"><a class="u-url" href="https://www.thesheps.dev">https://www.thesheps.dev</a></div>
+    <div class="aside__about"><a href="https://www.thesheps.dev">https://www.thesheps.dev</a></div>
 </div>
