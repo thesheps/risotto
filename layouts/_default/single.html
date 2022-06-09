@@ -11,9 +11,8 @@
 {{define "aside" }}
     {{ if .Params.description }}<p>{{ .Params.description }}</p>{{ end }}
     {{ if or (.Params.author) (.Params.date) }}
-        <p>
-            {{ if .Params.author }}By {{ .Params.author }}{{ if .Date }}, {{ end }}{{ end }}
-            {{ if .Date }}{{ .Date.Format "2006-01-02" }}{{ end }}
+        <p class="dt-published">
+            {{ if .Date }}{{ .Date.Format "2006-01-02 15:04:05" }}{{ end }}
         </p>
     {{ end }}
 
