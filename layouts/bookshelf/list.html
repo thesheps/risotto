@@ -1,0 +1,24 @@
+{{ define "main" }}
+<header class="content__header">
+    <h1>{{ .Title | markdownify }}</h1>
+    {{ .Content }}
+</header>
+
+<table>
+    <thead>
+        <th>Author</th>
+        <th>Title</th>
+        <th>Status</th>
+    </thead>
+
+    <tbody>
+        {{ range .Pages }}
+        <tr>
+            <td>{{ .Params.author }}</td>
+            <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
+            <td>Read</td>
+        </tr>
+        {{ end }}
+    </tbody>
+</table>
+{{ end }}
