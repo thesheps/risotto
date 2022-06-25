@@ -1,0 +1,13 @@
+.cat-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    width: 50%;
+}
+
+.cat-title {
+    text-align: center;
+    font-size: 5rem;
+    margin-bottom: 50px;
+}
