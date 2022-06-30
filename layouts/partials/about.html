@@ -4,10 +4,10 @@
         {{ with .logo }}<img class="about__logo u-photo" src="{{ . | absURL }}" alt="Logo">{{ end }}
         <br>
 
-        <a rel="author" class="p-author" href="https://www.thesheps.dev">
-            <h1 class="about__title">{{ .name }}</h1>
-        </a>
-
+        <div rel="author" class="p-author" href="https://www.thesheps.dev">
+            <h1 class="about__title">{{ .name }} | <span class="p-pronouns">he/him</span></h1>
+        </div>
+        
         {{ with .summary }}<p class="about__summary p-note">{{ . | markdownify }}</p>{{ end }}
     </div>
     {{ end }}
