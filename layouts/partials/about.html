@@ -1,26 +1,49 @@
 {{ with .Site.Params.about }}
 <div class="h-card">
-    <div class="aside__about">
-        {{ with .logo }}<img class="about__logo u-photo" src="{{ . | absURL }}" alt="Logo">{{ end }}
-        <br>
+  <div class="aside__about">
+    {{ with .logo }}<img
+      class="about__logo u-photo"
+      src="{{ . | absURL }}"
+      alt="Logo"
+    />{{ end }}
+    <br />
 
-        <div rel="author" class="p-author" href="https://www.thesheps.dev">
-            <h1 class="about__title">{{ .name }} | <span class="p-pronouns">he/him</span></h1>
-        </div>
-        
-        {{ with .summary }}<p class="about__summary p-note">{{ . | markdownify }}</p>{{ end }}
+    <div rel="author" class="p-author" href="https://www.thesheps.dev">
+      <h1 class="about__title">
+        {{ .name }} | <span class="p-pronouns">he/him</span>
+      </h1>
     </div>
+
+    {{ with .summary }}
+    <p class="about__summary p-note">{{ . | markdownify }}</p>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <ul class="aside__social-links">
+    {{ range $item := .Site.Params.socialLinks }}
+    <li>
+      <a
+        href="{{ $item.url }}"
+        rel="me"
+        aria-label="{{ $item.title }}"
+        title="{{ $item.title }}"
+        ><i class="{{ $item.icon }}" aria-hidden="true"></i></a
+      >&nbsp;
+    </li>
     {{ end }}
 
-    <ul class="aside__social-links">
-        {{ range $item := .Site.Params.socialLinks }}
-        <li>
-            <a href="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}" title="{{ $item.title }}"><i
-                    class="{{ $item.icon }}" aria-hidden="true"></i></a>&nbsp;
-        </li>
-        {{ end }}
-    </ul>
+    <li>
+      <a rel="me" href="https://hachyderm.io/@thesheps"
+        >@thesheps@hachyderm.io</a
+      >
+    </li>
+  </ul>
 
-    <div class="aside__about">Dev: <a href="https://www.deliveroo.co.uk">@deliveroo</a></div>
-    <div class="aside__about">Games Dev: <a href="https://www.sheepandram.com">@sheepandram.com</a></div>
+  <div class="aside__about">
+    Dev: <a href="https://www.deliveroo.co.uk">@deliveroo</a>
+  </div>
+  <div class="aside__about">
+    Games Dev: <a href="https://www.sheepandram.com">@sheepandram.com</a>
+  </div>
 </div>
